@@ -1,0 +1,25 @@
+inherit kf5
+
+NAME="kf5-kidletime"
+VERSION=5.9.0
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="KDE 5 idle time library"
+DESCRIPTION="KIdleTime is a singleton reporting information on idle time. It is
+useful not only for finding out about the current idle time of the PC, but also
+for getting notified upon idle time events, such as custom timeouts, or user
+activity."
+
+PKG_NAMES="libKF5IdleTime5 libKF5IdleTime-devel"
+libKF5IdleTime5_CONTENTS="
+	usr/bin/cygKF5IdleTime-5.dll
+	usr/share/doc/
+"
+libKF5IdleTime_devel_REQUIRES="libQt5Core-devel libQt5Gui-devel libQt5X11Extras-devel"
+libKF5IdleTime_devel_CONTENTS="
+	usr/include/KF5/KIdleTime/
+	usr/include/KF5/kidletime_version.h
+	usr/lib/cmake/KF5IdleTime/
+	${QT5_MKSPECSDIR#/}/modules/qt_KIdleTime.pri
+	usr/lib/libKF5IdleTime.dll.a
+"
